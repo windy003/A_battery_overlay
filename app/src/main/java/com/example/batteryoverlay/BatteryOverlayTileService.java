@@ -5,6 +5,7 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import android.content.Intent;
 import android.util.Log;
+import android.os.Handler;
 
 public class BatteryOverlayTileService extends TileService {
     private static final String TAG = "BatteryOverlayTile";
@@ -33,14 +34,23 @@ public class BatteryOverlayTileService extends TileService {
     public void onClick() {
         super.onClick();
         Log.d(TAG, "Tile Clicked");
+        
+        Intent intent = new Intent(this, BatteryOverlayService.class);
         if (isServiceRunning()) {
-            stopService(new Intent(this, BatteryOverlayService.class));
+            stopService(intent);
             Log.d(TAG, "Stopping Service");
         } else {
-            startService(new Intent(this, BatteryOverlayService.class));
+            startService(intent);
             Log.d(TAG, "Starting Service");
         }
-        updateTile();
+        
+        // 添加短暂延迟后更新 tile 状态
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                updateTile();
+            }
+        }, 100);
     }
 
     private void updateTile() {

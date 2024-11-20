@@ -1,19 +1,19 @@
 [
     {
-        "merged": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-merged_res-4:\\layout_overlay_layout.xml.flat",
-        "source": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-main-6:\\layout\\overlay_layout.xml"
+        "merged": "com.example.batteryoverlay.app-merged_res-4:/drawable_ic_battery_overlay_off.xml.flat",
+        "source": "com.example.batteryoverlay.app-main-6:/drawable/ic_battery_overlay_off.xml"
     },
     {
-        "merged": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-merged_res-4:\\drawable_ic_battery_overlay_on.xml.flat",
-        "source": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-main-6:\\drawable\\ic_battery_overlay_on.xml"
+        "merged": "com.example.batteryoverlay.app-merged_res-4:/layout_activity_main.xml.flat",
+        "source": "com.example.batteryoverlay.app-main-6:/layout/activity_main.xml"
     },
     {
-        "merged": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-merged_res-4:\\drawable_ic_battery_overlay_off.xml.flat",
-        "source": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-main-6:\\drawable\\ic_battery_overlay_off.xml"
+        "merged": "com.example.batteryoverlay.app-merged_res-4:/layout_overlay_layout.xml.flat",
+        "source": "com.example.batteryoverlay.app-main-6:/layout/overlay_layout.xml"
     },
     {
-        "merged": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-merged_res-4:\\layout_activity_main.xml.flat",
-        "source": "D:\\gradle-home\\daemon\\8.9\\com.example.batteryoverlay.app-main-6:\\layout\\activity_main.xml"
+        "merged": "com.example.batteryoverlay.app-merged_res-4:/drawable_ic_battery_overlay_on.xml.flat",
+        "source": "com.example.batteryoverlay.app-main-6:/drawable/ic_battery_overlay_on.xml"
     },
     {
         "merged": "com.example.batteryoverlay.app-merged_res-4:/drawable_ic_android_black_24dp.xml.flat",
