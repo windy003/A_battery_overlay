@@ -1,0 +1,4 @@
+#Thu Nov 21 09:13:42 CST 2024
+base.0=D\:\\files\\projects\\battery_overlay\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
