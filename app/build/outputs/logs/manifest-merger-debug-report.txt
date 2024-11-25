@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.google.android.material:material:1.11.0] D:\gradle-home\caches\8.9\transforms\bc55ece3a38c21d5b7e8cab4d4caeb8b\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\gradle-home\caches\8.9\transforms\3083fbcbf701c73d09cc65af0a0c99d0\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] D:\gradle-home\caches\8.9\transforms\52d07a29e9a1f586607935504f663e81\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -66,8 +66,8 @@ ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:6:
 	android:name
 		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:6:22-78
 application
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:8:5-37:19
-INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:8:5-37:19
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:8:5-39:19
+INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:8:5-39:19
 MERGED from [com.google.android.material:material:1.11.0] D:\gradle-home\caches\8.9\transforms\bc55ece3a38c21d5b7e8cab4d4caeb8b\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] D:\gradle-home\caches\8.9\transforms\bc55ece3a38c21d5b7e8cab4d4caeb8b\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] D:\gradle-home\caches\8.9\transforms\3083fbcbf701c73d09cc65af0a0c99d0\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -90,58 +90,62 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] D:\gradle-home\caches\8.9\t
 		ADDED from [androidx.core:core:1.12.0] D:\gradle-home\caches\8.9\transforms\11277b3cad23f480d6488067ff2fe0c0\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:label
 		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:10:9-39
+	android:roundIcon
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:12:9-43
 	android:allowBackup
 		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
 		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:11:9-47
 service#com.example.batteryoverlay.BatteryOverlayService
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:12:9-15:40
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:14:9-17:40
 	android:enabled
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:14:13-35
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:16:13-35
 	android:exported
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:15:13-37
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:13:13-50
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:15:13-50
 service#com.example.batteryoverlay.BatteryOverlayTileService
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:16:9-28:19
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:18:9-30:19
 	android:label
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:19:13-47
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:21:13-47
 	android:exported
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:23:13-36
 	android:permission
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:20:13-77
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:22:13-77
 	android:icon
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:18:13-60
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:20:13-60
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:17:13-54
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:19:13-54
 intent-filter#action:name:android.service.quicksettings.action.QS_TILE
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:22:13-24:29
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:24:13-26:29
 action#android.service.quicksettings.action.QS_TILE
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:23:17-87
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:25:17-87
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:23:25-84
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:25:25-84
 meta-data#android.service.quicksettings.ACTIVE_TILE
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:25:13-27:41
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:27:13-29:41
 	android:value
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:27:17-38
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:29:17-38
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:26:17-73
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:28:17-73
 activity#com.example.batteryoverlay.MainActivity
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:29:9-36:20
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:31:9-38:20
 	android:exported
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:31:13-36
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:33:13-36
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:30:13-41
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:32:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:32:13-35:29
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:34:13-37:29
 action#android.intent.action.MAIN
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml:36:27-74
 uses-sdk
 INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\files\projects\battery_overlay\app\src\main\AndroidManifest.xml

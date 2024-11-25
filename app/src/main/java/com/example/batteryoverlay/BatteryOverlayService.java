@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BatteryOverlayService extends Service {
@@ -92,8 +93,20 @@ public class BatteryOverlayService extends Service {
             public void onReceive(Context context, Intent intent) {
                 if (intent.getAction().equals(Intent.ACTION_BATTERY_CHANGED)) {
                     int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+                    int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+                    boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+                                         status == BatteryManager.BATTERY_STATUS_FULL;
+
                     TextView batteryText = overlayView.findViewById(R.id.battery_text);
+                    ImageView chargingIcon = overlayView.findViewById(R.id.charging_icon);
+
                     batteryText.setText(level + "%");
+
+                    if (isCharging) {
+                        chargingIcon.setImageResource(R.drawable.ic_charging);
+                    } else {
+                        chargingIcon.setImageResource(R.drawable.ic_not_charging);
+                    }
                 }
             }
         };
