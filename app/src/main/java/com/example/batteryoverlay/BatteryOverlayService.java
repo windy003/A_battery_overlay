@@ -30,6 +30,15 @@ public class BatteryOverlayService extends Service {
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
         initOverlayView();
         registerBatteryReceiver();
+
+        // 添加关闭按钮的点击事件
+        TextView closeButton = overlayView.findViewById(R.id.close_button);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopSelf();
+            }
+        });
     }
 
     private void initOverlayView() {

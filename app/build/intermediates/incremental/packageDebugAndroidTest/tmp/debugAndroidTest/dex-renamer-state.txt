@@ -1,0 +1,4 @@
+#Tue Nov 26 08:45:45 CST 2024
+base.0=D\:\\files\\projects\\battery_overlay\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex

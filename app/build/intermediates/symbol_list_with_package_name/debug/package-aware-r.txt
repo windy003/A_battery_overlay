@@ -3201,6 +3201,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
+id close_button
 id closest
 id collapseActionView
 id compress

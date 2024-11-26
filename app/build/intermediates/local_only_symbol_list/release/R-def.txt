@@ -8,6 +8,7 @@ drawable ic_launcher_background
 drawable ic_not_charging
 id battery_text
 id charging_icon
+id close_button
 layout activity_main
 layout overlay_layout
 mipmap ic_launcher
