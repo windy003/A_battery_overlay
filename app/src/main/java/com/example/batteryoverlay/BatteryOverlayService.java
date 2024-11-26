@@ -53,7 +53,7 @@ public class BatteryOverlayService extends Service {
         
         params.gravity = Gravity.TOP | Gravity.START;
         params.x = 0;
-        params.y = 100;
+        params.y = 0;
 
         overlayView.setOnTouchListener(new View.OnTouchListener() {
             private int initialX;
