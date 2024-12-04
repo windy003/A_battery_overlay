@@ -31,69 +31,31 @@ public class BatteryOverlayService extends Service {
         initOverlayView();
         registerBatteryReceiver();
 
-        // 添加关闭按钮的点击事件
         TextView closeButton = overlayView.findViewById(R.id.close_button);
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stopSelf();
-            }
-        });
-    }
+        closeButton.setOnClickListener(v -> stopSelf());
 
-    private void initOverlayView() {
-        overlayView = LayoutInflater.from(this).inflate(R.layout.overlay_layout, null);
         params = new WindowManager.LayoutParams(
-            WindowManager.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-            PixelFormat.TRANSLUCENT
-        );
-        
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT);
+
         params.gravity = Gravity.TOP | Gravity.START;
         params.x = 0;
         params.y = 0;
-
-        overlayView.setOnTouchListener(new View.OnTouchListener() {
-            private int initialX;
-            private int initialY;
-            private float initialTouchX;
-            private float initialTouchY;
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        initialX = params.x;
-                        initialY = params.y;
-                        initialTouchX = event.getRawX();
-                        initialTouchY = event.getRawY();
-                        return true;
-
-                    case MotionEvent.ACTION_MOVE:
-                        int deltaX = (int) (event.getRawX() - initialTouchX);
-                        int deltaY = (int) (event.getRawY() - initialTouchY);
-                        
-                        params.x = initialX + deltaX;
-                        params.y = initialY + deltaY;
-                        
-                        try {
-                            windowManager.updateViewLayout(overlayView, params);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        return true;
-                }
-                return false;
-            }
-        });
 
         try {
             windowManager.addView(overlayView, params);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        setupDragging();
+    }
+
+    private void initOverlayView() {
+        overlayView = LayoutInflater.from(this).inflate(R.layout.overlay_layout, null);
     }
 
     private void registerBatteryReceiver() {
@@ -104,44 +66,73 @@ public class BatteryOverlayService extends Service {
                     int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
                     int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
                     boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
-                                         status == BatteryManager.BATTERY_STATUS_FULL;
+                            status == BatteryManager.BATTERY_STATUS_FULL;
 
                     TextView batteryText = overlayView.findViewById(R.id.battery_text);
                     ImageView chargingIcon = overlayView.findViewById(R.id.charging_icon);
 
                     batteryText.setText(level + "%");
-
+                    
                     if (isCharging) {
                         chargingIcon.setImageResource(R.drawable.ic_charging);
+                        chargingIcon.setVisibility(View.VISIBLE);
                     } else {
-                        chargingIcon.setImageResource(R.drawable.ic_not_charging);
+                        chargingIcon.setVisibility(View.GONE);
                     }
                 }
             }
         };
+
         registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
+
+    private void setupDragging() {
+        final float[] lastTouchX = {0};
+        final float[] lastTouchY = {0};
+        final int[] initialX = {0};
+        final int[] initialY = {0};
+
+        overlayView.setOnTouchListener((v, event) -> {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    lastTouchX[0] = event.getRawX();
+                    lastTouchY[0] = event.getRawY();
+                    initialX[0] = params.x;
+                    initialY[0] = params.y;
+                    return true;
+
+                case MotionEvent.ACTION_MOVE:
+                    float dx = event.getRawX() - lastTouchX[0];
+                    float dy = event.getRawY() - lastTouchY[0];
+
+                    params.x = initialX[0] + (int) dx;
+                    params.y = initialY[0] + (int) dy;
+
+                    try {
+                        windowManager.updateViewLayout(overlayView, params);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    return true;
+            }
+            return false;
+        });
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        isRunning = false;
-        if (windowManager != null && overlayView != null) {
+        if (overlayView != null && windowManager != null) {
             windowManager.removeView(overlayView);
         }
         if (batteryReceiver != null) {
             unregisterReceiver(batteryReceiver);
         }
+        isRunning = false;
     }
 
     @Override
     public IBinder onBind(Intent intent) {
         return null;
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        isRunning = true;
-        return START_STICKY;
     }
 } 
