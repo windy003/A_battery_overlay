@@ -71,7 +71,7 @@ public class BatteryOverlayService extends Service {
                     TextView batteryText = overlayView.findViewById(R.id.battery_text);
                     ImageView chargingIcon = overlayView.findViewById(R.id.charging_icon);
 
-                    batteryText.setText(level + "%");
+                    batteryText.setText(String.valueOf(level));
                     
                     if (isCharging) {
                         chargingIcon.setImageResource(R.drawable.ic_charging);
