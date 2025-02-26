@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BatteryOverlay</string>
+    <string name="charging_icon_desc">充电状态图标</string>
+    <string name="tile_label">电量显示</string>
+</resources>

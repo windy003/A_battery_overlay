@@ -43,7 +43,7 @@ public class BatteryOverlayService extends Service {
 
         params.gravity = Gravity.TOP | Gravity.START;
         params.x = 0;
-        params.y = 0;
+        params.y = 300;
 
         try {
             windowManager.addView(overlayView, params);
